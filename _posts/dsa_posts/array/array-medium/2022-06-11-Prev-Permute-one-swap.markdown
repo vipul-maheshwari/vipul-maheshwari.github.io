@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Previous Permutation one swap
+title: Prev Permute one swap
 date: '2022-06-12'
 categories: arraymedium
 published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Previous Permutation with one swap](https://leetcode.com/problems/previous-permutation-with-one-swap/)
+### [Question Link : Prev Permute one swap](https://leetcode.com/problems/previous-permutation-with-one-swap/)
 
 -----------------------------------------------------------------------------------------------------------
 

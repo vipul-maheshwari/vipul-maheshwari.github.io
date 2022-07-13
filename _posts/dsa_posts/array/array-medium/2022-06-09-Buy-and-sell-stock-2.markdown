@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Best time to buy and sell stock2
+title: Buy and sell stock 2
 date: '2022-06-09'
 categories: arraymedium
 published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Best time to buy and sell stock ||](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+### [Question Link : Buy and sell stock 2 ||](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 -----------------------------------------------------------------------------------------------------------
 
