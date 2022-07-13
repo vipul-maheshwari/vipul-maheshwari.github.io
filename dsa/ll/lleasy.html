@@ -1,0 +1,17 @@
+---
+layout: page
+permalink: /dsa/ll/easy/
+title: /dsa/ll/easy
+---
+
+<body> 
+    Easy posts
+</body>
+ 
+{{page.categories | capitalize | join: ', '}}
+
+<br>
+<br>
+{% for post in site.categories.lleasy %}
+<li><span>{{post.date | date_to_string}}</span> &nbsp; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}

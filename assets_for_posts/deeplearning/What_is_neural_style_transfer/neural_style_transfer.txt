@@ -1,0 +1,4 @@
+<https://towardsdatascience.com/neural-style-transfer-tutorial-part-1-f5cd3315fa7f>
+<https://www.analyticsvidhya.com/blog/2020/10/introduction-and-implementation-to-neural-style-transfer-deep-learning/>
+<https://www.v7labs.com/blog/neural-style-transfer#:~:text=It%20is%20an%20application%20of,and%20Deep%20Convolutional%20Neural%20Networks.>
+<https://medium.datadriveninvestor.com/style-in-computer-vision-neural-style-transfer-c44da727f1c4>

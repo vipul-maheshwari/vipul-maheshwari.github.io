@@ -1,0 +1,20 @@
+# Example Site settings
+
+#google_analytics: UA-NNNNNNNN-N
+
+
+header_pages:
+ - home.md
+ - dsa.html
+ - others.html
+
+#categories.html
+#if you want to showcase all the categories, just add categories.html below the header_pages in the same line
+
+#footer: 'follow us on <a href="https://twitter.com/">twitter</a>'
+
+#style: light # dark (default) or light
+#listen_for_clients_preferred_style: true # true or false (default)
+
+plugins:
+  - jekyll-seo-tag
