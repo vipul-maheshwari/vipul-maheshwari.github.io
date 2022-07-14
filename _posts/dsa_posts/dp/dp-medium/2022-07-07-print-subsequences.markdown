@@ -27,31 +27,31 @@ Most people get confused in subarrays and subsequences. The difference is simple
 ```cpp
 void helper(int index, vector<string>&res, string &s, string temp_string){
 //if index of the given temp string is equal to the string s then we know we reached to the base case
-	if(index == s.size()){
-		res.push_back(temp_string);
-		return;
-	}
+ if(index == s.size()){
+  res.push_back(temp_string);
+  return;
+ }
 
-	//taking the current character literal
-	temp_string.push_back(s[index]);
+ //taking the current character literal
+ temp_string.push_back(s[index]);
 
-	//recursive call for the rest of the elements
-	helper(index+1,res,s,temp_string);
+ //recursive call for the rest of the elements
+ helper(index+1,res,s,temp_string);
 
-	//other option, don't take the current character and then find the subsequence
-	temp_string.pop_back();
+ //other option, don't take the current character and then find the subsequence
+ temp_string.pop_back();
 
-	//recursive call for the rest of the elements
-	helper(index+1,res,s,temp_string);
-	return;
+ //recursive call for the rest of the elements
+ helper(index+1,res,s,temp_string);
+ return;
 }
 
 //Main function
 vector<string> generateallsubsequnces(string s){
-	vector<string>res;
-	string s_temp = "";
-	helper(0,res,s,s_temp);
-	return res;
+ vector<string>res;
+ string s_temp = "";
+ helper(0,res,s,s_temp);
+ return res;
 }
 ```
 

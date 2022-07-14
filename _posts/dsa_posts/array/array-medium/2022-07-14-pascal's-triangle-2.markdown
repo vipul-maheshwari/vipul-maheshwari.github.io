@@ -19,28 +19,28 @@ Create a Pascal’s triangle using Pascal's Triangle and then return that partic
 class Solution {
 public:
 vector<vector<int>> generate(int numRows) {
-	vector<vector<int>>res;
-	for (int i = 0; i < numRows; i++) {
-		//initializing a new row vector filled with i+1 number of 1s
-		vector<int> row(i+1, 1);
-		for (int j = 1; j < i; j++) {
-			row[j] = res[i - 1][j] + res[i - 1][j - 1];
-		}
-		res.push_back(row);
-	}
-	return res;
+ vector<vector<int>>res;
+ for (int i = 0; i < numRows; i++) {
+  //initializing a new row vector filled with i+1 number of 1s
+  vector<int> row(i+1, 1);
+  for (int j = 1; j < i; j++) {
+   row[j] = res[i - 1][j] + res[i - 1][j - 1];
+  }
+  res.push_back(row);
+ }
+ return res;
 }
 
 vector<int> getRow(int rowIndex) {
-	
-	//generate a pascal's triangle of size rowIndex+1
-	vector<vector<int>>triangle = generate(rowIndex+1);
-	vector<int>row;
+ 
+ //generate a pascal's triangle of size rowIndex+1
+ vector<vector<int>>triangle = generate(rowIndex+1);
+ vector<int>row;
 
-	for(int i = 0; i < triangle[rowIndex].size(); i++){
-		row.push_back(triangle[rowIndex][i]);
-	}
-	return row;
+ for(int i = 0; i < triangle[rowIndex].size(); i++){
+  row.push_back(triangle[rowIndex][i]);
+ }
+ return row;
 }
 };
 ```

@@ -7,38 +7,14 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : -Lookout-](https://leetcode.com/problems/set-matrix-zeroes/)
+### [Question Link : -Lookout-](https://leetcode.com/problems/lookout/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;
-**✅ *Approach 1 : Using***
-
-Add text here&nbsp;
-
-```cpp
-class Solution {
-
-};
-```
-
-&nbsp;
-**⌛ Time Complexity**  : O(n^2)
-**🚀 Space Complexity** : O(n)
-
------------------------------------------------------------------------------------------------------------
-
-**✅ *Approach 2 :***
+**✅ *Approach 1 :***
 
 Add text here.&nbsp;
 
-```cpp
-if cell[i][j] == 0 {
-    cell[i][0] = 0
-    cell[0][j] = 0
-}
-```
-
-&nbsp;
 -Lookout-
 
 ***🤖 Algorithm***
@@ -59,6 +35,6 @@ class Solution {
 -----------------------------------------------------------------------------------------------------------
 💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇
 
-Email Id : vipulmaheshwari09042001@gmail.com
+Email Id : vipulmaheshwari.deogarh@gmail.com
 Subject : Question / Your Name
 Body : Feedback / Suggestion / Any other comments / chit-chat

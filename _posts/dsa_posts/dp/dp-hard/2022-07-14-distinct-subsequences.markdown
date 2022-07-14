@@ -21,44 +21,44 @@ public:
 //Helper function
 void helper(int index, vector<string>&res, string &s, string temp_string){
 
-	//if index of the given temp string is equal to the string s then we know we reached to the base case
-	if(index == s.size()){
-		res.push_back(temp_string);
-		return;
-	}
+ //if index of the given temp string is equal to the string s then we know we reached to the base case
+ if(index == s.size()){
+  res.push_back(temp_string);
+  return;
+ }
 
-	//taking the current character literal
-	temp_string.push_back(s[index]);
-	helper(index+1,res,s,temp_string);
-	temp_string.pop_back();
-	helper(index+1,res,s,temp_string);
-	return;
+ //taking the current character literal
+ temp_string.push_back(s[index]);
+ helper(index+1,res,s,temp_string);
+ temp_string.pop_back();
+ helper(index+1,res,s,temp_string);
+ return;
 }
 
 //Main function
 vector<string> generateallsubsequnces(string s){
-	vector<string>res;
-	string s_temp = "";
-	helper(0,res,s,s_temp);
-	return res;
+ vector<string>res;
+ string s_temp = "";
+ helper(0,res,s,s_temp);
+ return res;
 }
 
 
 int numDistinct(string s, string t) {
-	vector<string>s_subsequences = generateallsubsequnces(s);
-	
-	//mapping unique subsequnces of s
-	unordered_map<string,int>s_subsequences_map;
-	for(auto &i : s_subsequences) s_subsequences_map[i]++;
-		
-	//Counting the number of distinct subsequnces
-	int count = 0;
-	for(auto &i : s_subsequences_map){
-		if(i.first == t){
-			count += i.second;
-		}
-	}
-	return count;
+ vector<string>s_subsequences = generateallsubsequnces(s);
+ 
+ //mapping unique subsequnces of s
+ unordered_map<string,int>s_subsequences_map;
+ for(auto &i : s_subsequences) s_subsequences_map[i]++;
+  
+ //Counting the number of distinct subsequnces
+ int count = 0;
+ for(auto &i : s_subsequences_map){
+  if(i.first == t){
+   count += i.second;
+  }
+ }
+ return count;
 }
 
 };
@@ -81,38 +81,38 @@ The count of subsequences for a given string will increase beyond the capability
 class Solution {
 public:
 vector<string> generateallsubsequnces(string s){
-	vector<string>res;
-	int size_string = s.size();
-	unsigned long long int subsequence_count = pow(2,size_string);
+ vector<string>res;
+ int size_string = s.size();
+ unsigned long long int subsequence_count = pow(2,size_string);
 
-	for(unsigned long long int  i = 0; i < subsequence_count; i++){
-		string temp_string = "";
-		for(unsigned long long int j = 0; j < size_string; j++){
-			if((i & (1<<j))){
-				temp_string.push_back(s[j]);
-			}
-		}
-		res.push_back(temp_string);
-	}
-	return res;
+ for(unsigned long long int  i = 0; i < subsequence_count; i++){
+  string temp_string = "";
+  for(unsigned long long int j = 0; j < size_string; j++){
+   if((i & (1<<j))){
+    temp_string.push_back(s[j]);
+   }
+  }
+  res.push_back(temp_string);
+ }
+ return res;
 }
 
 
 int numDistinct(string s, string t) {
-	vector<string>s_subsequences = generateallsubsequnces(s);
-	
-	//mapping unique subsequnces of s
-	unordered_map<string,int>s_subsequences_map;
-	for(auto &i : s_subsequences) s_subsequences_map[i]++;
-		
-	//Counting the number of distinct subsequnces
-	int count = 0;
-	for(auto &i : s_subsequences_map){
-		if(i.first == t){
-			count += i.second;
-		}
-	}
-	return count;
+ vector<string>s_subsequences = generateallsubsequnces(s);
+ 
+ //mapping unique subsequnces of s
+ unordered_map<string,int>s_subsequences_map;
+ for(auto &i : s_subsequences) s_subsequences_map[i]++;
+  
+ //Counting the number of distinct subsequnces
+ int count = 0;
+ for(auto &i : s_subsequences_map){
+  if(i.first == t){
+   count += i.second;
+  }
+ }
+ return count;
 }
 };
 ```
@@ -226,11 +226,11 @@ public:
 
 &nbsp;
 **⌛ Time Complexity**  : O(n*m) There are N*M states therefore at max ‘N*M’ new problems will be solved.
-**🚀 Space Complexity** : O(n*m) + O(n+m) Reason: We are using a recursion stack space(O(N+M)) and a 2D array ( O(N*M)).
+**🚀 Space Complexity** : O(n*m) + O(n+m) Reason: We are using a recursion stack space(O(n+m)) and a 2D array ( O(n*m)).
 
 -----------------------------------------------------------------------------------------------------------
 💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇
 
-Email Id : vipulmaheshwari09042001@gmail.com
+Email Id : vipulmaheshwari.deogarh@gmail.com.com
 Subject : Question / Your Name
 Body : Feedback / Suggestion / Any other comments / chit-chat

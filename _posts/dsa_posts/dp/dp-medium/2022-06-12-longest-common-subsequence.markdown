@@ -87,7 +87,7 @@ int LCSLength(string X, string Y, int m, int n)
 
 ⭐ The worst-case time complexity of the above solution is O(2(m+n)) and occupies space in the call stack, where m and n are the length of the strings X and Y. The worst case happens when there is no common subsequence present in X and Y (i.e., LCS is 0), and each recursive call will end up in two recursive calls.
 
------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 **✅ *Approach 2 : Using DP.***
 
@@ -127,12 +127,12 @@ int longestCommonSubsequence(string text1, string text2) {
 **⌛ Time Complexity** : O(n.m) where n and m are the length of the strings text1 and text2.
 **🚀 Space Complexity** : O(n.m)
 
------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 📕References
 
 - 📑 [Article](https://www.techiedelight.com/longest-common-subsequence/)
 
------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇
 
 Email Id : vipulmaheshwari.deogarh@gmail.com
