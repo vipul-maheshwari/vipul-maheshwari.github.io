@@ -46,7 +46,7 @@ What if we can use a single 1-D array to store the values of F(n-1) and F(n-2) a
 int fibonacci(int n, vector<int>&dp){
     
     //base case
-    if(n <= 2) return n;
+    if(n <= 1) return n;
     
     //checking if the value for the given number is already stored in the vector
     if(dp[n] != -1) return dp[n];
@@ -71,7 +71,7 @@ int fib(int n) {
 **🚀 Space Complexity** : O(n) - using a single 1-D array to store the values of F(n-1) and F(n-2)
 
 &nbsp;
-***🧬 You might think that the Time complexity should be exponential again as we are still using the two recursive calls to find the solution but in case of Dynamic programming, Function calling will be same but the values are stored once a distinct function is executed and the values will be retrieved if the same function calls again.***
+***🧬 Isn't the Time complexity should be exponential again as we are still using the two recursive calls  to find thesolution!!!! No, it's not as in case of Dynamic programming, Function calling will be same but the values are stored once a distinct function is executed and the values will be retrieved if the same function calls again.***
 &nbsp;
 
 -----------------------------------------------------------------------------------------------------------

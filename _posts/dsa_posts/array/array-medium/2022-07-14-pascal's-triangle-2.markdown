@@ -11,7 +11,7 @@ permalink: /:categories/:title
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;
-**✅ *Approach 1 : Using ![Pascal's Triangle](https://vipul-maheshwari.github.io/arraymedium/Pascal's-Triangle)***
+**✅ *Approach 1 : Using [Pascal's Triangle](https://vipul-maheshwari.github.io/arraymedium/Pascal's-Triangle)***
 
 Create a Pascal’s triangle using Pascal's Triangle and then return that particular row associated with it. Eazzzy.&nbsp;
 
