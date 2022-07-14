@@ -6,8 +6,9 @@
 header_pages:
  - home.md
  - dsa.html
- - others.html
  - projects.html
+ - others.html
+
 
 #categories.html
 #if you want to showcase all the categories, just add categories.html below the header_pages in the same line
