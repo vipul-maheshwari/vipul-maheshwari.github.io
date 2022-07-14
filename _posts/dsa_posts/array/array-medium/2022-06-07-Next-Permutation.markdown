@@ -90,6 +90,6 @@ Time complexity is mixed up function of O(n) and O(nlog(n)) values. The first pa
 -----------------------------------------------------------------------------------------------------------
 💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇
 
-Email Id : vipulmaheshwari09042001@gmail.com
+Email Id : vipulmaheshwari.deogarh@gmail.com
 Subject : Question / Your Name
 Body : Feedback / Suggestion / Any other comments / chit-chat
