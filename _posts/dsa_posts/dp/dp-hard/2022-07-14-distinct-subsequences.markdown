@@ -129,7 +129,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:20:14**`
 
 -----------------------------------------------------------------------------------------------------------
 
-**✅ *Approach 3 : Using DP***
+**✅ *Approach 3 : Using DP (***
 
 We have to find distinct subsequences of S2 in S1. As there is no uniformity in data, there is no other way to find out than to **try out all possible ways**. To do so we will need to use **recursion**.
 

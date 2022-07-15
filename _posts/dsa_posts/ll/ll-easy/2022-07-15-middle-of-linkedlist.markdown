@@ -2,7 +2,7 @@
 layout: post
 title: Middle of the Linked List
 date: "2022-07-15"
-categories: lleasy
+categories: ll-easy
 published: true
 permalink: /:categories/:title 
 ---
@@ -17,7 +17,7 @@ Find the total number of nodes in the linked list and return the middle one. na�
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;
-**✅ *Approach 1 : Use Fast and Slow pointers***
+**✅ *Approach 2 : Use Fast and Slow pointers***
 
 Take two pointers, one slow and one fast, move fast twice as “fast” than slower one and when you reach to the end, that is when fast pointer reaches to the null or the last node, slower one will be exactly at the middle of the list..&nbsp;
 
