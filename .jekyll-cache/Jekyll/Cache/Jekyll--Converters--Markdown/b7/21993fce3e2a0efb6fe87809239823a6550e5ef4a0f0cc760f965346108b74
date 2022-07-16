@@ -1,0 +1,227 @@
+I"6Z<h3 id="question-link--distinct-subsequencs"><a href="https://leetcode.com/problems/distinct-subsequences/">Question Link : Distinct Subsequencs</a></h3>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 1 : Using Recursion</em></strong></p>
+
+<p>The basic and naïve approach would be find all the subsequences of the string s, count the number of occurrence of each one of them and check if there is any subsequence equal to the string t, if there is, increase the count equal to the number of occurrence of that subsequence.  </p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+<span class="c1">//Helper function</span>
+<span class="kt">void</span> <span class="n">helper</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="n">res</span><span class="p">,</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="n">string</span> <span class="n">temp_string</span><span class="p">){</span>
+
+ <span class="c1">//if index of the given temp string is equal to the string s then we know we reached to the base case</span>
+ <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">==</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp_string</span><span class="p">);</span>
+  <span class="k">return</span><span class="p">;</span>
+ <span class="p">}</span>
+
+ <span class="c1">//taking the current character literal</span>
+ <span class="n">temp_string</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+ <span class="n">helper</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">res</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">temp_string</span><span class="p">);</span>
+ <span class="n">temp_string</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+ <span class="n">helper</span><span class="p">(</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">res</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">temp_string</span><span class="p">);</span>
+ <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Main function</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">generateallsubsequnces</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">){</span>
+ <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">res</span><span class="p">;</span>
+ <span class="n">string</span> <span class="n">s_temp</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+ <span class="n">helper</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">res</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">s_temp</span><span class="p">);</span>
+ <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="n">numDistinct</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">string</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+ <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">s_subsequences</span> <span class="o">=</span> <span class="n">generateallsubsequnces</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+ 
+ <span class="c1">//mapping unique subsequnces of s</span>
+ <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">s_subsequences_map</span><span class="p">;</span>
+ <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span> <span class="o">:</span> <span class="n">s_subsequences</span><span class="p">)</span> <span class="n">s_subsequences_map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  
+ <span class="c1">//Counting the number of distinct subsequnces</span>
+ <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span> <span class="o">:</span> <span class="n">s_subsequences_map</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">first</span> <span class="o">==</span> <span class="n">t</span><span class="p">){</span>
+   <span class="n">count</span> <span class="o">+=</span> <span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+ <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong>  : O(2^n) and other iterative loops.
+<strong>🚀 Space Complexity</strong> : O(n) (recursive stack)
+ </p>
+
+<p>🔴 NOTE: This approach will work for shorter strings. As soon as the string size increases, time complexity will also shoot up.</p>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 2 : Using pow for creating the subsequences</em></strong></p>
+
+<p>The count of subsequences for a given string will increase beyond the capability of bit manipulation. Will give realtime error </p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">generateallsubsequnces</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">){</span>
+ <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">res</span><span class="p">;</span>
+ <span class="kt">int</span> <span class="n">size_string</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+ <span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">subsequence_count</span> <span class="o">=</span> <span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">size_string</span><span class="p">);</span>
+
+ <span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span>  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">subsequence_count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">string</span> <span class="n">temp_string</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size_string</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+   <span class="k">if</span><span class="p">((</span><span class="n">i</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">j</span><span class="p">))){</span>
+    <span class="n">temp_string</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+   <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp_string</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="n">numDistinct</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">string</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+ <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="n">s_subsequences</span> <span class="o">=</span> <span class="n">generateallsubsequnces</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+ 
+ <span class="c1">//mapping unique subsequnces of s</span>
+ <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">s_subsequences_map</span><span class="p">;</span>
+ <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span> <span class="o">:</span> <span class="n">s_subsequences</span><span class="p">)</span> <span class="n">s_subsequences_map</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+  
+ <span class="c1">//Counting the number of distinct subsequnces</span>
+ <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="n">i</span> <span class="o">:</span> <span class="n">s_subsequences_map</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="p">.</span><span class="n">first</span> <span class="o">==</span> <span class="n">t</span><span class="p">){</span>
+   <span class="n">count</span> <span class="o">+=</span> <span class="n">i</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+  <span class="p">}</span>
+ <span class="p">}</span>
+ <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong>  : O(2^n) and other iterative loops.
+<strong>🚀 Space Complexity</strong> : O(n)
+ </p>
+
+<p>🔴 This approach will work for shorter strings. As soon as the string size increases, time complexity will also shoot up and their will be a runtime error:</p>
+
+<p><code class="language-plaintext highlighter-rouge">**runtime error: shift exponent 32 is too large for 32-bit type 'int' (solution.cpp)
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:20:14**</code></p>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 3 : Using DP (</em></strong></p>
+
+<p>We have to find distinct subsequences of S2 in S1. As there is no uniformity in data, there is no other way to find out than to <strong>try out all possible ways</strong>. To do so we will need to use <strong>recursion</strong>.</p>
+
+<p><strong><em>🤖 Algorithm</em></strong></p>
+
+<p><strong>Step 1:</strong> Express the problem in terms of indexes.</p>
+
+<p>We are given two strings. We can represent them with the help of two indexes i and j. Initially, i=n-1 and j=m-1, where n and m are lengths of strings S1 and S2. Initially, we will call f(n-1,j-1), which means the count of all subsequences of string S2[0…m-1] in string S1[0…n-1]. We can generalize it as follows:</p>
+
+<p><img src="/assets_for_posts/dsa/dp/rec1.jpg" alt="rec1" /></p>
+
+<p><strong>Step 2:</strong> Try out all possible choices at a given index.</p>
+
+<p>Now, i and j represent two characters from strings S1 and S2 respectively. We want to find distinct subsequences. There are only two options that make sense: either the characters represented by i and j match or they don’t.</p>
+
+<p><strong><em>Case 1: When the characters match</em></strong></p>
+
+<p><strong>if(S1[i]==S2[j])</strong>, let’s understand it with the following example:. </p>
+
+<p><img src="/assets_for_posts/dsa/dp/rec2.jpg" alt="rec2" /></p>
+
+<p>S1[i] == S2[j], now as the characters at i and j match, we would want to check the possibility of the remaining characters of S2 in S1 therefore we reduce the length of both the strings by 1 and call the function recursively.</p>
+
+<p><img src="/assets_for_posts/dsa/dp/rec3.jpg" alt="rec3" /></p>
+
+<p>Now, if we only make the above single recursive call, we are rejecting the opportunities to find more than one subsequences because it can happen that the jth character may match with more characters in S1[0…i-1], for example where there are more occurrences of ‘g’ in S1 from which also an answer needs to be explored.</p>
+
+<p><img src="/assets_for_posts/dsa/dp/rec4.jpg" alt="rec4" /></p>
+
+<p>To explore all such possibilities, we make another recursive call in which we reduce the length of the S1 string by 1 but keep the S2 string the same, i.e we call f(i-1,j).</p>
+
+<p><img src="/assets_for_posts/dsa/dp/rec5.jpg" alt="rec5" /></p>
+
+<p><strong><em>Case 2: When the characters don’t match</em></strong></p>
+
+<p>if(S1[i] != S2[j]), it means that we don’t have any other choice than to try the next character of S1 and match it with the current character S2.</p>
+
+<p><img src="/assets_for_posts/dsa/dp/rec6.jpg" alt="rec6" /></p>
+
+<p>This can be summarized as :</p>
+
+<p>if(S1[i]==S2[j]), call f(i-1,j-1) and f(i-1,j).
+if(S1[i]!=S2[j]), call f(i-1,j).</p>
+
+<p><strong>Step 3:  Return the sum of choices</strong>
+As we have to return the total count, we will return the sum of f(i-1,j-1) and f(i-1,j) in case 1 and simply return f(i-1,j) in case 2.</p>
+
+<p><strong>Base Cases:</strong></p>
+
+<p>We are reducing i and j in our recursive relation, there can be two possibilities, either i becomes -1 or j becomes -1.</p>
+
+<ul>
+  <li>if j&lt;0, it means we have matched all characters of S2 with characters of S1, so we return 1.</li>
+  <li>if i&lt;0, it means we have checked all characters of S1 but we are not able to match all characters of S2, therefore we return 0.
+The final pseudocode after steps 1, 2, and 3:</li>
+</ul>
+
+<p><img src="/assets_for_posts/dsa/dp/rec7.jpg" alt="rec7" /></p>
+
+<p>🔴 Steps to memoize a recursive solution:</p>
+
+<p>If we draw the recursion tree, we will see that there are overlapping subproblems. In order to convert a recursive solution the following steps will be taken:</p>
+
+<p>1.Create a dp array of size [n][m]. The size of S1 and S2 are n and m respectively, so the variable i will always lie between ‘0’ and ‘n-1’ and the variable j between ‘0’ and ‘m-1’.
+2.We initialize the dp array to -1.
+3.Whenever we want to find the answer to particular parameters (say f(i,j)), we first check whether the answer is already calculated using the dp array(i.e dp[i][j]!= -1 ). If yes, simply return the value from the dp array.
+4.If not, then we are finding the answer for the given value for the first time, we will use the recursive relation as usual but before returning from the function, we will set dp[i][j] to the solution we get.</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">util</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">s</span><span class="p">,</span> <span class="n">string</span><span class="o">&amp;</span> <span class="n">t</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">dp</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">){</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">){</span>
+            <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">){</span>
+            <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+            <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">util</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">dp</span><span class="p">)</span><span class="o">+</span><span class="n">util</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">dp</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">util</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">dp</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">numDistinct</span><span class="p">(</span><span class="n">string</span> <span class="n">s</span><span class="p">,</span> <span class="n">string</span> <span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">dp</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+        
+        <span class="k">return</span> <span class="n">util</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">dp</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong>  : O(n<em>m) There are N</em>M states therefore at max ‘N<em>M’ new problems will be solved.
+<strong>🚀 Space Complexity</strong> : O(n</em>m) + O(n+m) Reason: We are using a recursion stack space(O(n+m)) and a 2D array ( O(n*m)).</p>
+
+<hr />
+<p>💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇</p>
+
+<p>Email Id : vipulmaheshwari.deogarh@gmail.com.com
+Subject : Question / Your Name
+Body : Feedback / Suggestion / Any other comments / chit-chat</p>
+:ET

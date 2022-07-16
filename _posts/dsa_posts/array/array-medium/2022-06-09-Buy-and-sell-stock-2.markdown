@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Buy and sell stock 2 ||](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using Two pointers***
 
@@ -62,7 +61,7 @@ int maxProfit(vector<int>& prices) {
 **🚀 Space Complexity** : O(1)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Using one pass iteration (Better version of the approach 1)***
 
 Instead of calculating local valleys and peaks, what if we start to look out for the profits at each day considering the price of the stock on the previous day.

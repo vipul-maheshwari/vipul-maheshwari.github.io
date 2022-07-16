@@ -1,0 +1,87 @@
+I"� <h3 id="question-link--buy-and-sell-stock-2-"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/">Question Link : Buy and sell stock 2 ||</a></h3>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 1 : Using Two pointers</em></strong></p>
+
+<p>Unlike in <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best time to buy and sell stock</a> here we can do multiple transactions. That is you can buy and sell the stock on the same day or buy yesterday sell today, buy today sell next day, every possibility is open considering that you make profit out of each transaction.</p>
+
+<p>The question is how to find which day to buy and which day to sell.</p>
+
+<p>To make the most proift, We need to look out for the local valley and the peaks. Buy at the valley, sell at the peaks. So that we can make the profits at each possible opportunity. </p>
+
+<p><img src="/assets_for_posts/dsa/array/easy/best-time-to-buy-and-sell-stock-2/valley-peak.jpg" alt="valley-peak" /></p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//example:[7,1,5,3,6,4]</span>
+
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+<span class="kt">int</span> <span class="n">maxProfit</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">prices</span><span class="p">)</span> <span class="p">{</span>
+    
+    <span class="kt">int</span> <span class="n">buy</span><span class="p">,</span> <span class="n">sell</span><span class="p">,</span> <span class="n">profit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">prices</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">){</span>
+
+        <span class="c1">//Finding the local valley</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">buy</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">buy</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">buy</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        
+        <span class="c1">//If we reached to the edge of the mountain</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">){</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="c1">//Finding the local Peak</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">sell</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">sell</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">sell</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        
+        <span class="c1">//Making profit at each mountain range</span>
+        <span class="n">profit</span> <span class="o">+=</span> <span class="n">sell</span><span class="o">-</span><span class="n">buy</span><span class="p">;</span>
+        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">profit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong>  : O(n)
+<strong>🚀 Space Complexity</strong> : O(1)</p>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 2 : Using one pass iteration (Better version of the approach 1)</em></strong></p>
+
+<p>Instead of calculating local valleys and peaks, what if we start to look out for the profits at each day considering the price of the stock on the previous day.</p>
+
+<p>For example, if the stock price of a given stock is [1,2,3,4,5,6] then if we solve this problem with mountain ambition, that is finding the local valleys and peaks, the maximum profit would be 5 when we buy the stock on the day 1 and sell it on the day 6.</p>
+
+<p>But let’s say I buy the stock at day 1, and as soon as it’s day 2 the price of the stock is greater than it’s previous day, as there is an opportunity to make profit, hence the profit is 1 at day 2.</p>
+
+<p>Now I buy the stock at day 2 and sell it on the day 3, profit increases to 2, henceforth it continues till I reach at the end and the profit becomes 5 which is same as if we would have solve the problem using the mountain technique of valleys and peaks.. </p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">maxProfit</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">P</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">profit</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">(</span><span class="n">P</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>              <span class="c1">// yesterday was valley, today is peak</span>
+                <span class="n">profit</span> <span class="o">+=</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>   <span class="c1">// buy yesterday, sell today</span>
+        <span class="k">return</span> <span class="n">profit</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong>  : O(n)
+<strong>🚀 Space Complexity</strong> : O(1)</p>
+
+<hr />
+<p>💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇</p>
+
+<p>Email Id : vipulmaheshwari.deogarh@gmail.com
+Subject : Question / Name
+Body : Feedback / Suggestion / Any other comments / chit-chat</p>
+:ET

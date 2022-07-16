@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Dynamic Programming - Iterative version***
 
@@ -43,7 +42,7 @@ vector<vector<int>> generate(int numRows) {
 **🚀 Space Complexity** : O(n^2)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Dynamic Programming - Recursive version***
 
 Logic for the recursive version is same as what we did in the iterative version. Instead, we are using Top-Down approach where we go from the bottom to the top until the top row is not generated and then we are coming back to the bottom again to form the new rows using the previously generated rows.

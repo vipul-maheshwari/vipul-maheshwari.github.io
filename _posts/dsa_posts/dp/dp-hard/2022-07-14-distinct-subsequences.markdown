@@ -72,7 +72,7 @@ int numDistinct(string s, string t) {
 🔴 NOTE: This approach will work for shorter strings. As soon as the string size increases, time complexity will also shoot up.
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Using pow for creating the subsequences***
 
 The count of subsequences for a given string will increase beyond the capability of bit manipulation. Will give realtime error&nbsp;
@@ -128,7 +128,7 @@ int numDistinct(string s, string t) {
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior prog_joined.cpp:20:14**`
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 3 : Using DP (***
 
 We have to find distinct subsequences of S2 in S1. As there is no uniformity in data, there is no other way to find out than to **try out all possible ways**. To do so we will need to use **recursion**.

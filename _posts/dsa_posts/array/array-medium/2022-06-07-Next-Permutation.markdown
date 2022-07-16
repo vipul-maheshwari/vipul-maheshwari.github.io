@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Next Permutation](https://leetcode.com/problems/next-permutation/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using STL in-built function : bool next_permutation (BidirectionalIterator first,BidirectionalIterator last);***
 
@@ -35,7 +34,7 @@ Since there are n! permutations for a vector of length n, and each permutation t
 **🚀 Space Complexity** : O(n)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Using the intution behind the lexiographical order : Finding the peaks and swapping them to generate the next higher order sequence***
 
 You can generate the next permutation by finding the peaks of the given vector and swapping them with the smaller element on the left side of the peak. To get the better understanding, see this [YouTube](https://youtu.be/6qXO72FkqwM) video.

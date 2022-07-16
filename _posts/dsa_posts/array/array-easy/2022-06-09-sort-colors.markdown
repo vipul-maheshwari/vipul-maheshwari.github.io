@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Sort Colors](https://leetcode.com/problems/sort-colors/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using STL***
 You can easily solve this problem by using sort() function from STL. This is a very simple and easy to understand approach, but it is clearly mentioned in the documentation of the question that we are not allowed to use the sort() or any kind of STL function.
@@ -30,7 +29,7 @@ public:
 **🚀 Space Complexity** : O(1)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Count the number of 0's, 1's, and 2's'***
 
 Count the number of 0's, 1's, and 2's in the array. Then, use the number of 0's to place 0's in the beginning of the array, 1's in the middle, and 2's in the end. &nbsp;
@@ -63,7 +62,7 @@ public:
 **🚀 Space Complexity** : O(1)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 3 : Using Dutch National Flag Algorithm***
 
 In this algorithm, we will use three pointers *left*, *right*, and *mid* to validate the presence of 0, 1, and 2 in the array. *left* will point to the first element in the array, *right* will point to the last element in the array, and *mid* will point to the middle element in the array.

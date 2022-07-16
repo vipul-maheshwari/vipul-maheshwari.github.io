@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link](https://leetcode.com/problems/reverse-linked-list/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using iterative version***
 
@@ -63,7 +62,6 @@ public:
 **🚀 Space Complexity** : O(1)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 2 : Using Recursion***
 

@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Previous Permutation](https://practice.geeksforgeeks.org/problems/lexicographically-previous-permutation3620/1)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using STL in-built function : bool pre_permutation (BidirectionalIterator first,BidirectionalIterator last);***
 
@@ -35,7 +34,7 @@ Since there are n! permutations for a vector of length n, and each permutation t
 **Space Complexity** : O(n)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Using the intution behind the lexiographical order : Finding the Deeps and swapping them to generate the previous high higher order sequence***
 
 You can generate the previous permutation by finding the deeps of the given vector and swapping them with the greater element on the left side of the deep. Previous permutation is similar to the [next_permutation](https://vipul-maheshwari.github.io/dsa/Next-Permutation), have a look.

@@ -1,0 +1,106 @@
+I"�&<h3 id="question-link"><a href="https://leetcode.com/problems/fibonacci-number/">Question Link</a></h3>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 1 : Using Top-Down (Recursion)</em></strong>
+For the given n, we can find the nth Fibonacci number using the following recursive formula: F(n) = F(n-1) + F(n-2).</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">solution</span><span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong> : O(2^n) - exponential <a href="https://www.youtube.com/watch?v=pqivnzmSbq4&amp;ab_channel=mycodeschool">time complexity</a>
+<strong>🚀 Space Complexity</strong> : O(n) where n shows the recursive call stack.</p>
+
+<p> 
+<strong><em>🧬 When we are standalone using recursive algorithm, we need to recalulate different sub values which were calculated earlier, and cost us more time to reach to the solution, as using a single dimension dp will make sure we don’t need to recalculate the sub values again.. Just for the instance, if we use the recursive algorithm to find the fibonacci number for n = 100, it will take years</em></strong></p>
+
+<p><img src="/assets_for_posts/dsa/dp/Fibonnaci/recursion.jpg" alt="Fibonacci" />
+ </p>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 2 : Using Single 1-D DP.</em></strong></p>
+
+<p>What if we can use a single 1-D array to store the values of F(n-1) and F(n-2) and use the same recursive formula to calculate the F(n). That is instead of recalculating the values of F(n-1) and F(n-2) again and again, we can use the values of F(n-1) and F(n-2) to calculate F(n).</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="n">dp</span><span class="p">){</span>
+    
+    <span class="c1">//base case</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">n</span><span class="p">;</span>
+    
+    <span class="c1">//checking if the value for the given number is already stored in the vector</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+
+    <span class="c1">//if not, store the result in the vector and make a recursive call to compute the lower members of the fibonacci series</span>
+    <span class="k">else</span><span class="p">{</span>
+        <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">dp</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">dp</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">//creating a vector to store the fibonacci series</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">dp</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">dp</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong> : O(n) - linear time complexity, as we are using a single 1-D array to store the values of F(n-1) and F(n-2)
+<strong>🚀 Space Complexity</strong> : O(n) - using a single 1-D array to store the values of F(n-1) and F(n-2)</p>
+
+<p> 
+<strong><em>🧬 Isn’t the Time complexity should be exponential again as we are still using the two recursive calls  to find thesolution!!!! No, it’s not as in case of Dynamic programming, Function calling will be same but the values are stored once a distinct function is executed and the values will be retrieved if the same function calls again.</em></strong>
+ </p>
+
+<hr />
+<p> 
+<strong>✅ <em>Approach 3 : Using Memorisation : Bottom up approach</em></strong></p>
+
+<p>As we already know, for calculating nth Fibonacci number, we only need it’s two previous counterparts. For example if we want to calculate the 3rd Fibonacci number, we only need the 2nd Fibonacci number and the 1st Fibonacci number. Utilizing the fact, we can use 2 variables to store the two previous values and they will keep changing according to the new states.. Using this approach, we can solve the problem using O(n) time complexity and O(1) space complexity. Best of both hands..</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">fib</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">prev2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">prev1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">curr</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">prev2</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+       <span class="n">curr</span> <span class="o">=</span> <span class="n">prev2</span> <span class="o">+</span> <span class="n">prev1</span><span class="p">;</span>
+       <span class="n">prev2</span> <span class="o">=</span> <span class="n">prev1</span><span class="p">;</span>
+       <span class="n">prev1</span> <span class="o">=</span> <span class="n">curr</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">prev1</span><span class="p">;</span> 
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p> 
+<strong>⌛ Time Complexity</strong> : O(n) - linear time complexity, as we are using two variables to store the two previous values
+<strong>🚀 Space Complexity</strong> : O(1) - using two variables to store the two previous values
+ </p>
+
+<hr />
+
+<p> 
+⭐ <a href="https://leetcode.com/problems/climbing-stairs/">Climbing stairs</a> is the exactly same problem as Fibonacci numbers. As we know, the Fibonacci number is the sum of two previous Fibonacci numbers. Similarly, To climb n stairs, we need to find the different approaches to climb the n-1 and n-2 stairs. Looks fimiliar isn’t it!!!</p>
+
+<p>⭐ <a href="https://leetcode.com/problems/n-th-tribonacci-number/">N-th Tribonacci Number</a> instead of calculating two previous sub values, here we need three of them. That is F(n) = F(n-1) + F(n-2) + F(n-3). And bingo! It’s done…
+ </p>
+
+<hr />
+<p>💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇</p>
+
+<p>Email Id : vipulmaheshwari.deogarh@gmail.com
+Subject : Question / Your Name
+Body : Feedback / Suggestion / Any other comments / chit-chat</p>
+:ET

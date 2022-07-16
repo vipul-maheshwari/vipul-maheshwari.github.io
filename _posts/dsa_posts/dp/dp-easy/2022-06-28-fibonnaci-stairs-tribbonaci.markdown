@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link](https://leetcode.com/problems/fibonacci-number/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using Top-Down (Recursion)***
 For the given n, we can find the nth Fibonacci number using the following recursive formula: F(n) = F(n-1) + F(n-2).
@@ -36,7 +35,6 @@ public:
 &nbsp;
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 2 : Using Single 1-D DP.***
 
@@ -75,7 +73,6 @@ int fib(int n) {
 &nbsp;
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 3 : Using Memorisation : Bottom up approach***
 

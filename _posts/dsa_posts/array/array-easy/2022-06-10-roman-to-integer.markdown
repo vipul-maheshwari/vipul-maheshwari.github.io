@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Roman to integer](https://leetcode.com/problems/roman-to-integer/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using Unordered MASKING***
 

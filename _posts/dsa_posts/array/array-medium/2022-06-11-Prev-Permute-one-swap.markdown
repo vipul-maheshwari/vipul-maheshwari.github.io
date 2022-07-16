@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Prev Permute one swap](https://leetcode.com/problems/previous-permutation-with-one-swap/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using Brute force approach (Best possible way to solve the problem);***
 

@@ -10,7 +10,6 @@ permalink: /:categories/:title
 ### [Question Link : Buy and sell stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
 -----------------------------------------------------------------------------------------------------------
-
 &nbsp;
 **✅ *Approach 1 : Using Brute force (Single iteration)***
 

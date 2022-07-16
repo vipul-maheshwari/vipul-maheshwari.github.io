@@ -13,6 +13,7 @@ permalink: /:categories/:title
 
 &nbsp;
 **✅ *Approach 1 : Using Brute force***
+
 You can easily solve this problem by iterating over the array two times. First iteration is for considering every subarray and second iteration is for finding the maximum sum among all subarrays. A very niche approach.&nbsp;
 
 ```cpp
@@ -37,7 +38,7 @@ public:
 **🚀 Space Complexity** : O(1)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 2 : Using Kadane's Algorithm***
 
 There is a simple algorithm to solve this problem. What you can do is, using only one pass, we can find the maximum sum subarray. For every element in the array, we have two options, either include that element in the current subarray, or not include that element in the current subarray. For an example if the array is [-1,-2,4] then element 4 better not to include in the current subarray of -1 and -2, because it will give a sum of -1, which is less than the 4 itself, so the 4 singleton subarray is the best choice as of now.
@@ -72,7 +73,7 @@ public:
 **🚀 Space Complexity** : O(1)
 
 -----------------------------------------------------------------------------------------------------------
-
+&nbsp;
 **✅ *Approach 3 : Follow up → How to use the divide and conquer strategy to solve the same problem?***
 
 This involves recreating the problem by looking at the maximum subarray sum in such a way that it lies somewhere in between three different array choices-
