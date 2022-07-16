@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Buy and sell stock 2 ||](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+### [Buy and sell stock 2 ||](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

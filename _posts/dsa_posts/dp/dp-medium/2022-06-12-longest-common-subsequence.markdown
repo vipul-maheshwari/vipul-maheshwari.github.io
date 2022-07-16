@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Longest Common Subsequence](https://www.leetcode.com/problems/longest-common-subsequence/) -- [Solution](https://youtu.be/Ua0GhsJSlWM)
+### [Longest Common Subsequence](https://www.leetcode.com/problems/longest-common-subsequence/)
 
 --------------------------------------------------------------------------------
 
@@ -131,6 +131,7 @@ int longestCommonSubsequence(string text1, string text2) {
 📕References
 
 - 📑 [Article](https://www.techiedelight.com/longest-common-subsequence/)
+- 📽️ [Solution](https://youtu.be/Ua0GhsJSlWM)
 
 --------------------------------------------------------------------------------
 💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇

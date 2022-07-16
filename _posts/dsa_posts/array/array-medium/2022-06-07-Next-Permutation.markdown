@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Next Permutation](https://leetcode.com/problems/next-permutation/)
+### [Next Permutation](https://leetcode.com/problems/next-permutation/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

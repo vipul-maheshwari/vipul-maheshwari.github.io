@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link](https://leetcode.com/problems/reverse-linked-list/)
+### [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

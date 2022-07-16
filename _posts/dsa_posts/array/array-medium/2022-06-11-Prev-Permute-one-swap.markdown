@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Prev Permute one swap](https://leetcode.com/problems/previous-permutation-with-one-swap/)
+### [Prev Permute one swap](https://leetcode.com/problems/previous-permutation-with-one-swap/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

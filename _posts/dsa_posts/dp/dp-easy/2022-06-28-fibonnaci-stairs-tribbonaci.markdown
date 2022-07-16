@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link](https://leetcode.com/problems/fibonacci-number/)
+### [Fibonacci Stairs](https://leetcode.com/problems/fibonacci-number/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

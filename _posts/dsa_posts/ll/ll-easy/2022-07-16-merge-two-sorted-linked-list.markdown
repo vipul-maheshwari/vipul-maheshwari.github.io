@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Merge Two Sorted Linked List](https://leetcode.com/problems/merge-two-sorted-lists/)
+### [Merge Two Sorted Linked List](https://leetcode.com/problems/merge-two-sorted-lists/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

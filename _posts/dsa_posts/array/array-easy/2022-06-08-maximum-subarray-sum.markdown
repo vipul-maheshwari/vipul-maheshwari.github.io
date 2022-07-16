@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Maxmimum Subarray Sum](https://leetcode.com/problems/maximum-subarray/)
+### [Maxmimum Subarray Sum](https://leetcode.com/problems/maximum-subarray/)
 
 -----------------------------------------------------------------------------------------------------------
 

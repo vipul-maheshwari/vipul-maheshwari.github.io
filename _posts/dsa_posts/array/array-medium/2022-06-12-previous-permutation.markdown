@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Previous Permutation](https://practice.geeksforgeeks.org/problems/lexicographically-previous-permutation3620/1)
+### [Previous Permutation](https://practice.geeksforgeeks.org/problems/lexicographically-previous-permutation3620/1)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

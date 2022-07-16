@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Distinct Subsequencs](https://leetcode.com/problems/distinct-subsequences/)
+### [Distinct Subsequencs](https://leetcode.com/problems/distinct-subsequences/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

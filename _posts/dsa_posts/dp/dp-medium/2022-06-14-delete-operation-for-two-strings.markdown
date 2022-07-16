@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link](https://leetcode.com/problems/delete-operation-for-two-strings/)
+### [Delete operation for two strings](https://leetcode.com/problems/delete-operation-for-two-strings/)
 
 &nbsp;
 ***🧬 Delete operation for two strings is implemented as same as if we would have to find the Longest Common Subsequence between given two strings so just follow the same logic.***

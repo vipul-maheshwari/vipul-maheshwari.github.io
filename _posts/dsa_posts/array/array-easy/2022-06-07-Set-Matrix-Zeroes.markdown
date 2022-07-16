@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
+### [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

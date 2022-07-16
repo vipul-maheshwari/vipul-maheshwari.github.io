@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Buy and sell stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+### [Buy and sell stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

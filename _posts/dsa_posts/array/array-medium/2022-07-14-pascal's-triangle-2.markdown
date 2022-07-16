@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Pascal's Traiangle 2](https://leetcode.com/problems/pascals-triangle-ii)
+### [Pascal's Traiangle 2](https://leetcode.com/problems/pascals-triangle-ii)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

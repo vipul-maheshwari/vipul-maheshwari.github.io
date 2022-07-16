@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Longest Consecutive Subsequence](https://leetcode.com/problems/longest-consecutive-subsequence/)
+### [Longest Consecutive Subsequence](https://leetcode.com/problems/longest-consecutive-subsequence/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

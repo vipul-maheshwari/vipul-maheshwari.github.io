@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
+### [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

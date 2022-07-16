@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Roman to integer](https://leetcode.com/problems/roman-to-integer/)
+### [Roman to integer](https://leetcode.com/problems/roman-to-integer/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

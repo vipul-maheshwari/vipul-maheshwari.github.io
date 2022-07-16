@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Print Subsequences](https://www.geeksforgeeks.org/generating-all-possible-subsequences-using-recursion/)
+### [Print Subsequences](https://www.geeksforgeeks.org/generating-all-possible-subsequences-using-recursion/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;

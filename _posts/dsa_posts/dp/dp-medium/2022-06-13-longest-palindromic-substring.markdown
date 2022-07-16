@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title
 ---
 
-### [Question Link : Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) -- [Solution](https://youtu.be/XYQecbcd6_c)
+### [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 -----------------------------------------------------------------------------------------------------------
 
@@ -301,6 +301,8 @@ public:
 ⭐ There are 2*N+3 characters (Considering the extra characters inserted at the front and end of the string) in the given string. Making Space Complexity as O(n)
 
 ⭐ If you didn't get the Manacher's algorithm in the first time, don't beat yourself, I spent more than 4 hours to figure out the algorithm.
+
+📽️ [Solution](https://youtu.be/XYQecbcd6_c)
 
 -----------------------------------------------------------------------------------------------------------
 💻🐼💻 If there are any suggestions / questions / mistakes in my post, please do let me know by using the following email template: 👇

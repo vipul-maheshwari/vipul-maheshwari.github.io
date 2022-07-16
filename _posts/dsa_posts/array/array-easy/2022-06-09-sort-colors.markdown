@@ -7,7 +7,7 @@ published: true
 permalink: /:categories/:title 
 ---
 
-### [Question Link : Sort Colors](https://leetcode.com/problems/sort-colors/)
+### [Sort Colors](https://leetcode.com/problems/sort-colors/)
 
 -----------------------------------------------------------------------------------------------------------
 &nbsp;
