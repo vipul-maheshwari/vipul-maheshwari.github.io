@@ -2,7 +2,7 @@
 layout: post
 title: Reverse a Linked List 
 date: '2022-07-08'
-categories: ll-easy
+categories: lleasy
 published: true
 permalink: /:categories/:title 
 ---

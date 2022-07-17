@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Middle of the Linked List
-date: "2022-07-15"
-categories: ll-easy
+date: '2022-07-15'
+categories: lleasy
 published: true
 permalink: /:categories/:title 
 ---
