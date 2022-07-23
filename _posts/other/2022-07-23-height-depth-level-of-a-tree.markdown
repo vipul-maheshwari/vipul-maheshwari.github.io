@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Middle of the Linked List
-date: "2022-07-15"
-categories: lleasy
+title: Height-Level-Depth of Trees.
+date: "2020-07-23"
+categories: others
 published: true
 permalink: /:categories/:title 
 ---
